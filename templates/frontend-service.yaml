@@ -1,0 +1,13 @@
+# frontend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+spec:
+  type: NodePort
+  ports:
+  - port: 5173
+    nodePort: 31000
+  selector:
+    app: frontend
+  
