@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "cosmocloud-deploy.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "cosmocloud-deploy.selectorLabels" . | nindent 6 }}

@@ -21,3 +21,8 @@ redis:
 service:
   port: 8000
 
+serviceAccount:
+  create: true
+  name: ""
+  automount: true
+
