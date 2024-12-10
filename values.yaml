@@ -18,11 +18,4 @@ redis:
   port: 6379
   serviceType: ClusterIP
 
-service:
-  port: 8000
-
-serviceAccount:
-  create: true
-  name: ""
-  automount: true
-
+namespace: default

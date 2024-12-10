@@ -1,11 +1,13 @@
-# backend-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
   name: backend-svc
+  namespace: {{ .Values.namespace }}
 spec:
-  type: ClusterIP
-  ports:
-  - port: 8000
+  type: {{ .Values.backend.serviceType }}
   selector:
     app: backend
+  ports:
+    - protocol: TCP
+      port: {{ .Values.backend.port }}
+      targetPort: {{ .Values.backend.port }}

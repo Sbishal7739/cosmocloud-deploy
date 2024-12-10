@@ -1,13 +1,14 @@
-# frontend-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend-svc
+  namespace: {{ .Values.namespace }}
 spec:
-  type: NodePort
-  ports:
-  - port: 5173
-    nodePort: 31000
+  type: {{ .Values.frontend.serviceType }}
   selector:
     app: frontend
-  
+  ports:
+    - protocol: TCP
+      port: {{ .Values.frontend.port }}
+      targetPort: {{ .Values.frontend.port }}
+      nodePort: {{ .Values.frontend.nodePort }}

@@ -1,11 +1,13 @@
-# redis-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
   name: redis-svc
+  namespace: {{ .Values.namespace }}
 spec:
-  type: ClusterIP
-  ports:
-  - port: 6379
+  type: {{ .Values.redis.serviceType }}
   selector:
     app: redis
+  ports:
+    - protocol: TCP
+      port: {{ .Values.redis.port }}
+      targetPort: {{ .Values.redis.port }}
