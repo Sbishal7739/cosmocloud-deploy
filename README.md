@@ -2,17 +2,17 @@ Cosmocloud Helm Chart
 This repository contains the Helm chart cosmocloud-deploy, which deploys a complete application stack (frontend, backend, and Redis) in a Kubernetes cluster.
 
 Folder Structure
-cosmocloud-deploy/
-├── Chart.yaml
-├── _helpers.tpl
-├── templates
-│   ├── backend-deployment.yaml
-│   ├── backend-service.yaml
-│   ├── frontend-deployment.yaml
-│   ├── frontend-service.yaml
-│   ├── redis-deployment.yaml
-│   └── redis-service.yaml
-└── values.yaml
+cosmocloud-deploy/  
+├── Chart.yaml                # Metadata for the Helm chart  
+├── _helpers.tpl              # Template helpers used in other YAML files  
+├── templates/                # Kubernetes manifests for resources  
+│   ├── backend-deployment.yaml  
+│   ├── backend-service.yaml  
+│   ├── frontend-deployment.yaml  
+│   ├── frontend-service.yaml  
+│   ├── redis-deployment.yaml  
+│   └── redis-service.yaml  
+└── values.yaml               
 
 Application Components
 Frontend
